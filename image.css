@@ -1,0 +1,102 @@
+/* Begin Reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+}
+/* End Reset*/
+
+/*Utility classes*/
+.nowrap {
+    white-space: nowrap;
+}
+
+.offscreen {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+/*end utility classes*/
+
+body {
+    font: "Nunito", sans-serif;
+    min-height: 100vh;
+    background-color: aliceblue;
+    /* background-image: url(),
+                    linear-gradient(to left, steelblue, #eeee);
+     */
+}
+.container {
+    background-color: blanchedalmond;
+    background-image: url(img/background-2.jpg);
+    background-repeat: repeat;
+    background-position: bottom right;
+    background-size: cover;
+   
+}
+.hero {
+    border-bottom: 2px solid black;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+    background-color: rgba(255, 255, 255, 0.397);
+
+  
+}
+
+.h1 {
+    font-size: 80px;
+    color: #000000;
+    text-shadow: 2px 2px 2px #fff;
+    /* background-color: rgba(255, 255, 255, 0.493);
+    padding: 0.5rem;
+    border-radius: 10px; */
+
+}
+
+.profile-pic-figure {
+    
+    width: 35%;
+}
+
+.profile-pic-figure img {
+    width: 100%;
+    height: auto;
+    min-width: 100px;
+    border: 5px double gray;
+    border-radius: 50%;
+}
+.example {
+    margin-top: 1rem;
+    padding-left: 20px;
+    border: 1px solid red;
+    
+}
+
+.example img {
+    width: 25%;
+    height: auto;
+}
+
+.clip {
+    font-weight: 800;
+    font-size: 13rem;
+    text-align: center;
+    background-image: url(img/nature\ image.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    text-transform: uppercase;
+    -webkit-background-clip: text;
+    /* color: hsla(0, 0%, 0%, 0.205); */
+    color: transparent;
+}
