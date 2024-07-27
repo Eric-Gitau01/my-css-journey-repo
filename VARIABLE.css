@@ -1,0 +1,125 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+/* VARIABLE */
+:root {
+
+    /* FONT */
+    --FF: "Nunito", sans-serif;
+    --FS: 1.5rem;
+    --FS-XL: 3rem;
+    /* COLOR */
+    --BGCOLOR: rgb(107, 109, 110);
+    --ALT-BGCOLOR: rgb(90, 90, 90);
+    --RADIAL-COLOR: var(--RADIAL-COLOR);
+
+    /* SQUARE */
+    --SQUARE-BGCOLOR: papayawhip;
+    --SQUARE-SIZE: max(150px, 20vw);
+
+    /* GENERAL */
+    --PADDING: 0.5rem;
+    --SHADOW: 0 6px 5px -5px var(--ALT-BGCOLOR);
+    --BORDER: 2px solid var(--ALT-BGCOLOR);
+
+
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --BGCOLOR: black;
+        --ALT-BGCOLOR: rgb(0, 0, 0);
+        --RADIAL-COLOR: gray;
+        --SQUARE-BGCOLOR: rgb(248, 0, 248);
+    }
+}
+/* UTILITY CLASSES */
+
+.nowrap {
+    white-space: nowrap;
+}
+
+/* Global Styles */
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font: var(--FS) var(--FF);
+    min-height: 100vh;
+    background-color: var(--BGCOLOR);
+    background-image: radial-gradient(whitesmoke, var(--BGCOLOR));
+    display: flex;
+    flex-direction: column;
+}
+header,nav,footer {
+    display: grid;
+    place-content: center;
+    grid-template-columns: 100%;
+    text-align: center;
+}
+
+
+header, footer {
+    position: sticky;
+    background-color: rgb(33, 15, 66);
+    color: var(--RADIAL-COLOR);
+    
+}
+
+header {
+    top: 0;
+}
+nav {
+    background-color: var(--RADIAL-COLOR);
+    color: var(--ALT-BGCOLOR);
+    padding: var(--PADDING);
+    border-bottom: var(--BORDER);
+    font-weight: bolder;
+    display: flex;
+    justify-content: space-evenly;
+    box-shadow: var(--SHADOW);
+
+}
+
+
+main {
+    flex-grow: 1;
+    padding: 10px 0 ;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: row wrap;
+    flex-flow: min(4vw, 15px);
+
+}
+
+footer {
+    bottom: 0;
+}
+
+/* FEATURES */
+
+.square--highlight {
+    --SQUARE-BGCOLOR: cornflowerblue;
+}
+.square {
+    background-color: var(--SQUARE-BGCOLOR);
+    width: var(--SQUARE-SIZE);
+    height: var(--SQUARE-SIZE);
+    border: var(--BORDER);
+    border-radius: 15px;
+    display: grid;
+    place-content: center;
+    font-size: var(--FS-XL);
+    box-shadow: var(--SHADOW);
+}
+ 
