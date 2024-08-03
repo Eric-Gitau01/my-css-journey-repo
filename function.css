@@ -15,7 +15,8 @@ img {
 
     /* FONT */
     --FF: "Nunito", sans-serif;
-    --FS: 1.5rem;
+    --FS: clamp(1.75rem, 3vh, 2,25rem);
+    --FS-SM: clamp(1.25rem, 2vh, 2,25rem);
     --FS-XL: 3rem;
     /* COLOR */
     --BGCOLOR: rgb(83, 83, 83);
@@ -27,7 +28,7 @@ img {
     --SQUARE-SIZE: max(150px, 20vw);
 
     /* GENERAL */
-    --PADDING: 0.5rem;
+    --PADDING: 0.5em;
     --SHADOW: 0 6px 5px -5px var(--ALT-BGCOLOR);
     --BORDER: 2px solid var(--ALT-BGCOLOR);
 
@@ -81,7 +82,7 @@ header {
 nav {
     background-color: var(--RADIAL-COLOR);
     color: var(--ALT-BGCOLOR);
-    padding: var(--PADDING);
+    
     border-bottom: var(--BORDER);
     font-weight: bolder;
     display: flex;
@@ -93,19 +94,58 @@ nav {
 
 main {
     flex-grow: 1;
-    padding: 10px 0 ;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-flow: row wrap;
-    flex-flow: min(4vw, 15px);
+   padding: var(--PADDING);
+    
+    display: grid;
+    grid-template-columns: repeat(4, minmax(100px, 300px));
+    gap: min(2vw, 20px);
+    /* display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start; */
 
 }
 
+
+main section {
+    flex-grow: 1;
+    padding: var(--PADDING);
+}
+main aside {
+    background-color: hsla(0, 0%, 0%, 0.8);
+    color: var(--ALT-BGCOLOR);
+    font-size: var(--FS-SM);
+    font-style: italic;
+    padding: var(--PADDING);
+}
+.content {
+    margin-top: 20px;
+}
+.tooltip {
+    border-bottom: 1px dashed orange;
+    position: relative;
+
+}
+.tooltip:hover::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -20px;
+    white-space: nowrap;
+    background-color: var(--BGCOLOR);
+    padding: var(--PADDING);
+    border-radius: 15px;
+  
+}
 footer {
     bottom: 0;
 }
-
+a:any-link {
+    color: firebrick;
+}
+a:hover,a:focus {
+    /* opacity: 0.6; */
+    /* filter: brightness(150%); */
+    filter: hue-rotate(189deg)
+}
 /* FEATURES */
 
 .square--highlight {
@@ -113,8 +153,8 @@ footer {
 }
 .square {
     background-color: var(--SQUARE-BGCOLOR);
-    width: var(--SQUARE-SIZE);
-    height: var(--SQUARE-SIZE);
+    /* width: var(--SQUARE-SIZE);
+    height: var(--SQUARE-SIZE); */
     border: var(--BORDER);
     border-radius: 15px;
     display: grid;
@@ -123,3 +163,18 @@ footer {
     box-shadow: var(--SHADOW);
 }
  
+/* RESPONSIVE */
+
+@media screen and (min-width: 576px) {
+    main {
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+
+    main section {
+        width: calc(70% - 5px);
+    }
+    main aside {
+        width: calc(30% - 5px);
+    }
+}
